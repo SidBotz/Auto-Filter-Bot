@@ -65,3 +65,15 @@ async def restart_bots():
         except Exception as e:
             print(f"Error while restarting bot with token {bot_token}: {e}")
         
+async def restart_adminbot():
+    try:
+        botxtoken = ""
+        vj = Client(
+            f"{bot_token}", API_ID, API_HASH,
+            bot_token=botxtoken,
+            plugins={"root": "AdminBot"},
+        )
+        await vj.start()
+    except Exception as e:
+        print(f"Error while restarting bot with token {bot_token}: {e}")
+        
